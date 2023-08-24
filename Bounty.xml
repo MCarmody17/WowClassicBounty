@@ -1,0 +1,53 @@
+<!-- MyAddon.xml -->
+
+<!-- ... (previous XML content) ... -->
+<!-- MyAddon.xml -->
+
+<!-- ... (previous XML content) ... -->
+
+<Frames>
+    <!-- "Add a bounty" section -->
+    <Button name="MyAddonAddBountyButton" inherits="UIPanelButtonTemplate">
+        <Size x="100" y="30"/>
+        <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="MyAddonMainFrame" relativePoint="TOPLEFT" x="10" y="-10"/>
+        </Anchors>
+        <Scripts>
+            <OnClick function="MyAddon_AddBountyOnClick"/>
+        </Scripts>
+        <Text>Add a Bounty</Text>
+    </Button>
+
+    <Dropdown name="MyAddonFactionDropdown">
+        <Size x="120" y="30"/>
+        <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="MyAddonAddBountyButton" relativePoint="TOPRIGHT" x="10" y="0"/>
+        </Anchors>
+        <!-- Add faction options here -->
+    </Dropdown>
+
+    <EditBox name="MyAddonPlayerNameEditBox">
+        <Size x="180" y="30"/>
+        <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="MyAddonFactionDropdown" relativePoint="TOPRIGHT" x="10" y="0"/>
+        </Anchors>
+    </EditBox>
+
+    <EditBox name="MyAddonBountyAmountEditBox">
+        <Size x="80" y="30"/>
+        <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="MyAddonPlayerNameEditBox" relativePoint="TOPRIGHT" x="10" y="0"/>
+        </Anchors>
+    </EditBox>
+
+    <Button name="MyAddonPublishBountyButton" inherits="UIPanelButtonTemplate">
+        <Size x="100" y="30"/>
+        <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="MyAddonBountyAmountEditBox" relativePoint="TOPRIGHT" x="10" y="0"/>
+        </Anchors>
+        <Scripts>
+            <OnClick function="MyAddon_PublishBountyOnClick"/>
+        </Scripts>
+        <Text>Publish Bounty</Text>
+    </Button>
+</Frames>
